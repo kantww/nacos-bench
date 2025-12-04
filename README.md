@@ -10,6 +10,9 @@ This project provides a performance testing tool for Nacos core interfaces. It s
 | --instanceCountPerService | Number of service providers registered per service | 3 |  
 | --nacosClientCount | Number of simulated Nacos clients per process | 1000 |  
 | --nacosServerAddr | Nacos server address | 127.0.0.1 |  
+| --nacosServerPort | Nacos server port | 8848 |  
+| --username | Nacos username used for authentication | (empty) |  
+| --password | Nacos password used for authentication | (empty) |  
 | --namingMetadataLength | Metadata size of service providers | 128 bytes |  
 | --perfApi | Interface to be tested, options: namingReg, namingQuery, namingSubscribe, configPub, configGet | namingReg |  
 | --perfMode | Testing mode, options: naming, config | naming |  

@@ -11,6 +11,9 @@ var initGoroutinePool *bench_internal.Pool
 
 func main() {
 	nacosServerAddr := flag.String("nacosServerAddr", "127.0.0.1", "nacos server address")
+	nacosServerPort := flag.Int("nacosServerPort", 8848, "nacos server port")
+	username := flag.String("username", "", "nacos username")
+	password := flag.String("password", "", "nacos password")
 	nacosClientCount := flag.Int("nacosClientCount", 1000, "nacos client count")
 	serviceCount := flag.Int("serviceCount", 15000, "service count")
 	instanceCountPerService := flag.Int("instanceCountPerService", 3, "instance count per service")
@@ -32,6 +35,9 @@ func main() {
 		ConfigGetTps:            *perfTps,
 		InstanceCountPerService: *instanceCountPerService,
 		NacosAddr:               *nacosServerAddr,
+		NacosPort:               uint64(*nacosServerPort),
+		Username:                *username,
+		Password:                *password,
 		ConfigPubTps:            *perfTps,
 		PerfMode:                *perfMode,
 		ServiceCount:            *serviceCount,
